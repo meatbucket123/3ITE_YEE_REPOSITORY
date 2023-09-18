@@ -14,8 +14,8 @@
         <td>Rank</td>
         <td>Hiring Date</td>
         <td>Is Tenured</td>
-
-        <td>Details</td>
+        <td>More Details</td>
+        <td>Change Details</td>
 
 
     </tr>
@@ -27,10 +27,13 @@
             <td>@instructor.HiringDate</td>
             <td>@instructor.IsTenured</td>
             <td><a asp-action="ShowDetail" asp-route-id="@instructor.Id">Show Details</a></td>
+            <td><a asp-action="EditDetails" asp-controller="Instructor" asp-route-id="@instructor.Id">Edit Details</a></td>
 
-           
         </tr>
-       
     }
+        <button><a asp-action="AddInstructor" asp-controller="Instructor">Add Instructor</a></button>
+
+    
+
     
 </table>

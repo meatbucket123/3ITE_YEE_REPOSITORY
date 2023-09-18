@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Agraviador_MA1.props" />
+</Project>
