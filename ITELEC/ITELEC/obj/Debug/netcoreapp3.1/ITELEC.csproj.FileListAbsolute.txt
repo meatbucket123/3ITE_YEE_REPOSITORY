@@ -36,3 +36,13 @@ C:\Users\asd\source\repos\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.dll
 C:\Users\asd\source\repos\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.pdb
 C:\Users\asd\source\repos\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.genruntimeconfig.cache
 C:\Users\asd\source\repos\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.csproj.CopyComplete
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.csproj.AssemblyReference.cache
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.AssemblyInfo.cs
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.RazorAssemblyInfo.cache
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.RazorAssemblyInfo.cs
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.dll
+C:\Users\asd\Documents\GitHub\3ITE_YEE_REPOSITORY\ITELEC\ITELEC\obj\Debug\netcoreapp3.1\ITELEC.pdb

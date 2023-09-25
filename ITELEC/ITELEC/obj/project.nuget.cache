@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/4Wa4dut44fCY0skla7ZhxENaSbid/1zLBqiCnucjrwOYirFzeUHqTxoV4LtKxt2r5d2ZNH031lYsZYedmjXOg==",
+  "dgSpecHash": "rNf7BucNErqGoDU6sO6J55hHwQznO2576d9ZlOw4RSZxEWatELmf4iyS0FUQ0PEtA0UlBNM5vhbVaAKtktk79A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\ITELEC.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\ITELEC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asd\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }

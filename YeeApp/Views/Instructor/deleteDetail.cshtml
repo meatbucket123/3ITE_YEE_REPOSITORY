@@ -1,0 +1,87 @@
+﻿@model Instructor;
+<h1>Delete Details</h1>
+<style>
+
+	.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+</style>
+<form asp-action="deleteDetail" method="post">
+	<div class="form-group">
+		<label asp-for="Id">ID</label>
+		<input asp-for="Id" class="form-control" readonly/>
+	</div>
+	<div class="form-group">
+		<label asp-for="FirstName">First Name</label>
+		<input asp-for="FirstName" class="form-control" readonly />
+	</div>
+	<div class="form-group">
+		<label asp-for="LastName">Last Name</label>
+		<input asp-for="LastName" class="form-control" readonly />
+	</div>
+	<div class="form-group">
+		<label asp-for="Rank">Rank</label>
+		<select asp-for="Rank" asp-items="Html.GetEnumSelectList(typeof(Rank))" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label asp-for="HiringDate">Date Enrolled</label>
+		<input asp-for="HiringDate" class="form-control" readonly />
+	</div>
+	<div class="popup" onclick="myFunction()">
+		Delete
+		<span class="popuptext" id="myPopup">Are you sure u want to delete?... 	<button type="submit" class="btn btn-primary">Confirm</button></span>
+	</div>
+
+
+
+
+
+	
+
+
+	<script>
+		// When the user clicks on <div>, open the popup
+		function myFunction() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}
+	</script>
+</form>

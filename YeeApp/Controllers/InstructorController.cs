@@ -1,26 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using YeeApp.Models;
-
+using YeeApp.Properties.Services;
 
 namespace YeeApp.Controllers
 {
     public class InstructorController : Controller
     {
-        List<Instructor> InstructorList = new List<Instructor>
-            {
-                new Instructor()
-                {
-                    Id= 1,FirstName = "Juan Delacr",LastName = "Montano", Rank = Rank.Professor, HiringDate = DateTime.Parse("2022-08-26"), IsTenured = true
-                },
-                new Instructor()
-                {
-                    Id= 2,FirstName = "Pogi Nation",LastName = "Montano", Rank = Rank.AssistantProfessor, HiringDate = DateTime.Parse("2020-08-26"), IsTenured = false
-                },
-                new Instructor()
-                {
-                    Id= 3,FirstName = "Mark Jearard",LastName = "Montano", Rank = Rank.AssistantProfessor, HiringDate = DateTime.Parse("2021-08-26"), IsTenured = true
-                }
-            };
+        private readonly IMyFakeService _fakeService;
+        private List<Instructor> InstructorList;
+
+    public InstructorController(IMyFakeService fakeService)
+        {
+            _fakeService = fakeService;
+            InstructorList = _fakeService.InstructorList;
+        }
         public IActionResult Index()
         {
 
@@ -37,6 +30,29 @@ namespace YeeApp.Controllers
 
             return NotFound();
         }
+        [HttpGet]
+        public IActionResult deleteDetail(int id)
+        {
+            Instructor? instructor = InstructorList.FirstOrDefault(st => st.Id == id);
+              if (instructor != null)
+                return View(instructor);
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public IActionResult deleteDetail(Instructor instructorDelete)
+        {
+            Instructor? instructor = InstructorList.FirstOrDefault(st => st.Id == instructorDelete.Id);
+
+            if (instructor != null)
+            {
+                InstructorList.Remove(instructor);
+
+            }
+            return View("Index", InstructorList);
+        }
+
         [HttpGet]
         public IActionResult EditDetails(int id)
         {

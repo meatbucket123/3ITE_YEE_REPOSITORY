@@ -1,3 +1,5 @@
+using System;
+
 namespace ITELEC.Models
 {
     public enum Rank

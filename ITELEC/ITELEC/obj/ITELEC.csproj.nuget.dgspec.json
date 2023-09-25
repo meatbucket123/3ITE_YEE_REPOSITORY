@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\ITELEC.csproj": {}
+    "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\ITELEC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\ITELEC.csproj": {
+    "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\ITELEC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\ITELEC.csproj",
+        "projectUniqueName": "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\ITELEC.csproj",
         "projectName": "ITELEC",
-        "projectPath": "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\ITELEC.csproj",
+        "projectPath": "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\ITELEC.csproj",
         "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asd\\source\\repos\\ITELEC\\ITELEC\\obj\\",
+        "outputPath": "C:\\Users\\asd\\Documents\\GitHub\\3ITE_YEE_REPOSITORY\\ITELEC\\ITELEC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asd\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,10 +45,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -57,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
