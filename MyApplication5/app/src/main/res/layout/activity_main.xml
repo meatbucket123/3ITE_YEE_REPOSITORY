@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="MainActivity">
 
     <Button
         android:id="@+id/addAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="193dp"
         android:text="Add Account"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <Button
         android:id="@+id/showAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="191dp"
         android:text="Show Account"
         app:layout_constraintStart_toEndOf="@+id/addAccount"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <Button
         android:id="@+id/editAccount"
@@ -46,23 +46,28 @@
         app:layout_constraintStart_toEndOf="@+id/editAccount"
         app:layout_constraintTop_toBottomOf="@+id/showAccount" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="340dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="56dp"
-        android:text="Username"
+    <EditText
+        android:id="@+id/edtAccount"
+        android:layout_width="349dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="61dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="340dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="168dp"
-        android:text="Password"
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="348dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Pass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edtAccount" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

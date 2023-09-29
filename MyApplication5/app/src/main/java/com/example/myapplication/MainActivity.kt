@@ -4,87 +4,109 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var showAccount = findViewById<Button>(R.id.showAccount)
-   var textAccount = findViewById<TextView>(R.id.textView)
+        var editAccount = findViewById<EditText>(R.id.edtAccount)
+        var editPassword = findViewById<EditText>(R.id.edtPassword)
    var addAccount = findViewById<Button>(R.id.addAccount)
-        var editAccount = findViewById<Button>(R.id.editAccount)
+
         var deleteAccount = findViewById<Button>(R.id.deleteAccount)
+        var deleteToastStatement = "Account deleted"
    var addToastStatement = "Account is already existing"
     var updatedToastStatement = "Account is not existing"
         var arrayAccount = ArrayList<String>()
         var arrayPassword = ArrayList<String>()
 
         addAccount.setOnClickListener{
-        try{
-            val existingAccount = arrayAccount.stream().anyMatch{x -> x == editAccount.text.toString()}
-                        val existingPassword = arrayPassword.stream().anyMatch{x -> x == editAccount.text.toString()}
-            Log.i("info.yee", existingAccount.toString())
-            Log.i("info.yee",  existingPassword.toString())
-        }catch(e: Exception){
-            Log.e("error.yee", e.message.toString() )
-        }
+            try {
+                val existingAccount =
+                    arrayAccount.stream().anyMatch { x -> x == editAccount.text.toString() }
+                Log.i("info_yee", existingAccount.toString())
+                if(!existingAccount){
+                    arrayAccount.add(editAccount.text.toString())
+                    arrayPassword.add(editPassword.text.toString())
+                    addToastStatement = "Account added successfully!"
+                    Log.i("info_yee", existingAccount.toString())
+
+                    Toast.makeText(this, addToastStatement, Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    addToastStatement = "Account already exists!"
+                    Toast.makeText(this, addToastStatement, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: java.lang.Exception) {
+                Log.e("error_yee", e.message.toString())
+            }
         }
 
         editAccount.setOnClickListener{
-            try{
-                val existingAccount = arrayAccount.indexOf(editAccount.text.toString())
-                val existingPassword = arrayPassword.indexOf(editAccount.text.toString())
-                Log.i("info.yee", existingAccount.toString())
-                Log.i("info.yee", existingPassword.toString())
-                if(existingAccount >= 0 && existingPassword >=0){
-                    arrayPassword[existingPassword] = arrayPassword [existingPassword] + "_updated"
+            try {
+                var existingAccount = arrayAccount.indexOf(editAccount.text.toString())
+                var existingPassword = arrayPassword[existingAccount]
+                Log.i("info_yee", existingAccount.toString())
+                if(existingAccount >= 0 && existingPassword == editPassword.text.toString()){
                     arrayAccount[existingAccount] = arrayAccount[existingAccount] + "_updated"
-                    updatedToastStatement = "Account Updated Succesfully"
-                    Log.i("info.yee", updatedToastStatement)
-                }  else{
-                   updatedToastStatement = "Can't Update Account"
+                    arrayPassword[existingAccount] = arrayPassword[existingAccount] + "_updated"
+                    updatedToastStatement = "Account Updated Successfully!"
+                    Log.i("info_yee", updatedToastStatement)
+
+                    Toast.makeText(this, updatedToastStatement, Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this, updatedToastStatement, Toast.LENGTH_SHORT).show()
-            }catch(e:Exception){
-                Log.e("error.yee", e.message.toString())
+                else{
+                    updatedToastStatement = "Account doesn't exist or incorrect password!"
+                    Toast.makeText(this, updatedToastStatement, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: java.lang.Exception) {
+                Log.e("error_yee", e.message.toString())
             }
         }
         deleteAccount.setOnClickListener{
             try {
                 var existingAccount = arrayAccount.indexOf(editAccount.text.toString())
-                Log.i("yee.info", existingAccount.toString())
-                if (existingAccount >= 0) {
+                var existingPassword = arrayPassword[existingAccount]
+                Log.i("info_yee", existingAccount.toString())
+                if(existingAccount >= 0 && existingPassword == editPassword.text.toString()){
                     arrayAccount.removeAt(existingAccount)
-                    textAccount.setText(arrayAccount.size.toString())
-                    editAccount.setText(" ")
-                    updatedToastStatement = "Account Succesfully Deleted"
+                    arrayPassword.removeAt(arrayPassword.indexOf((editPassword.text.toString())))
+                    deleteToastStatement = "Account Deleted Successfully!"
+                    Log.i("info_yee", deleteToastStatement)
 
-                    Log.i("yee.info", updatedToastStatement)
+                    Toast.makeText(this, deleteToastStatement, Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this, updatedToastStatement, Toast.LENGTH_SHORT)
-                updatedToastStatement = "Account is not existing"
-
-            }
-            catch (e: Exception){
-                Log.e("error.yee", e.message.toString())
+                else{
+                    deleteToastStatement = "Account doesn't exist or incorrect password !"
+                    Toast.makeText(this, deleteToastStatement, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: java.lang.Exception) {
+                Log.e("error_yee", e.message.toString())
             }
         }
         showAccount.setOnClickListener {
-            try{
-                  var existingAccount = arrayAccount.indexOf(editAccount.text.toString())
-                Log.i("info.yee", existingAccount.toString())
+            try {
+                var existingAccount = arrayAccount.indexOf(editAccount.text.toString())
+                Log.i("info_yee", existingAccount.toString())
                 if(arrayAccount.size > 0){
                     var arraySize = arrayAccount.size - 1
-                    /*for(x in 0 .. arraySize)
-                        Toast.makeText(this, arrayAccount[x], Toast.LENGTH_SHORT).show() */
-                }        else {
-                    updatedToastStatement = "No accounts"
-                    Toast.makeText(this,updatedToastStatement,Toast.LENGTH_SHORT).show()
+                    var x = 0
+                    while(x <= arraySize){
+                        Toast.makeText(this, arrayAccount[x], Toast.LENGTH_SHORT).show()
+                        x++
+                    }
                 }
-            }   catch (e: Exception){
-                Log.e("error.yee", e.message.toString())
+                else{
+                    deleteToastStatement = "No accounts exist!!"
+                    Toast.makeText(this, deleteToastStatement, Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Log.e("error_yee", e.message.toString())
             }
         }
     }
