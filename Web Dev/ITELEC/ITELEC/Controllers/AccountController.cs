@@ -49,34 +49,38 @@ namespace ITELEC.Controllers
             return RedirectToAction("Index", "Instructor");
         }
 
-      
-        }
-    public async Task<IActionResult>Register(RegisterViewModel userEnteredData)
-    {
-        if (!ModelState.IsValid) {
-            User newUser = new User();
-            newUser.UserName = userEnteredData.UserName;
-            newUser.Firstname = userEnteredData.FirstName;
-            newUser.Lastname = userEnteredData.LastName;
-            newUser.Email = userEnteredData.Email;
-
-            var result = await _userManager.CreateAsync(newUser, userEnteredData.Password);
-
-            if (result.Succeeded)
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel userEnteredData)
+        {
+            if (!ModelState.IsValid)
             {
-                return RedirectAction("Index", "Instructor");
+                User newUser = new User();
+                newUser.UserName = userEnteredData.UserName;
+                newUser.Firstname = userEnteredData.FirstName;
+                newUser.Lastname = userEnteredData.LastName;
+                newUser.Email = userEnteredData.Email;
 
-            }else
-            {
-                foreach (CreatedAtRouteResult error in result.Errors)
+                var result = await _userManager.CreateAsync(newUser, userEnteredData.Password);
+
+                if (result.Succeeded)
                 {
-                    ModelState.AddMOdelError("", error.Description);
+                    return RedirectToAction("Index", "Instructor");
 
                 }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+
+                    }
+                }
             }
+            return View(userEnteredData);
         }
-        return View(userEnteredData);
     }
+
+
 
    
 }
