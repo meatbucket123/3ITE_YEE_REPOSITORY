@@ -1,0 +1,31 @@
+﻿@model Instructor;
+
+<h1>Edit Instructor</h1>
+<form asp-action="EditDetail" method="post">
+	<div class="form-group">
+		<label asp-for="Id">ID</label>
+		<input asp-for="Id" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label asp-for="FirstName">First Name</label>
+		<input asp-for="FirstName" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label asp-for="LastName">Last Name</label>
+		<input asp-for="LastName" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Status">Status</label>
+		<select asp-for="Status" asp-items="Html.GetEnumSelectList(typeof(Status))" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label asp-for="SalaryPerHour">Salary Per Hour</label>
+		<input asp-for="SalaryPerHour" class="form-control"></input>
+	</div>
+	<div class="form-group">
+		<label asp-for="Birthday">Birthday</label>
+		<input asp-for="Birthday" class="form-control" />
+	</div>
+	<button type="submit" class="btn btn-danger text-light">Update</button>
+	<a asp-action="Index" asp-route-id="@Model.Id"><button class="bg-danger text-light border-1 rounded-3">Return</button></a>
+</form>

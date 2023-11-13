@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using ITELEC.Models;
+﻿using ITELEC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace ITELEC.Controllers
 {
@@ -22,21 +18,8 @@ namespace ITELEC.Controllers
         {
             return View();
         }
-        public IActionResult About()
-        {
-            return View();
-        }
-        public IActionResult Home()
-        {
-            return View();
-        }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult ShowDetail()
         {
             return View();
         }
@@ -46,6 +29,5 @@ namespace ITELEC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
     }
 }
