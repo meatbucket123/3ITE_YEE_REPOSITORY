@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ArrayApplication</string>
+    <string name="account_placeholder">Account</string>
+    <string name="password_placeholder">Password</string>
+    <string name="update_button">Update Account</string>
+    <string name="add_button">Add Account</string>
+    <string name="find_button">Show Accounts</string>
+    <string name="delete_button">Delete Account</string>
+    <string name="account_counter">0</string>
+</resources>
